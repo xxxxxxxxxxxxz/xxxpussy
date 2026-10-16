@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>XXXPUSSY - Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="index.html">XXXPUSSY</a>
+  <span class="age">ADMIN</span>
+</header>
+
+<main class="admin-container">
+  <section id="loginPanel" class="panel">
+    <h1>Admin Login</h1>
+    <p class="muted">Sign in with your administrator account.</p>
+
+    <form id="loginForm">
+      <label>Email
+        <input id="email" type="email" autocomplete="username" required>
+      </label>
+      <label>Password
+        <input id="password" type="password" autocomplete="current-password" required>
+      </label>
+      <button type="submit">Log In</button>
+    </form>
+
+    <p id="loginMessage" class="message"></p>
+  </section>
+
+  <section id="dashboard" class="panel" hidden>
+    <div class="section-title">
+      <h1>Manage Pictures</h1>
+      <button id="logout" class="secondary" type="button">Log Out</button>
+    </div>
+
+    <form id="pictureForm">
+      <input id="pictureId" type="hidden">
+
+      <label>Picture Name
+        <input id="pictureName" maxlength="100" required>
+      </label>
+
+      <label>Category
+        <input id="pictureCategory" maxlength="60" placeholder="Featured, New, Popular..." required>
+      </label>
+
+      <label>Picture File
+        <input id="pictureFile" type="file" accept="image/jpeg,image/png,image/webp">
+      </label>
+
+      <p class="muted small">
+        Use only images you have the right to publish. Maximum file size: 5 MB.
+      </p>
+
+      <div class="button-row">
+        <button id="savePicture" type="submit">Save Picture</button>
+        <button id="clearForm" class="secondary" type="button">Clear</button>
+      </div>
+    </form>
+
+    <p id="adminMessage" class="message"></p>
+    <h2>Published Pictures</h2>
+    <div id="pictureList"></div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
